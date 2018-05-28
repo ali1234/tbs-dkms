@@ -5,3 +5,6 @@
 	path = linux_media
 	url = https://github.com/tbsdtv/linux_media
 	branch = latest
+[submodule "media-build-dkms"]
+	path = media-build-dkms
+	url = https://github.com/jasmin-j/media-build-dkms
