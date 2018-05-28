@@ -20,6 +20,7 @@ cd ../media-build-dkms
 ./prepare_dkms_src.sh Ubuntu bionic
 
 dch -i Used commit: https://github.com/ali1234/tbs-dkms/tree/$COMMIT
+dch -r ""
 
 # create a binary package
 fakeroot debian/rules binary
