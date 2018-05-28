@@ -1,5 +1,7 @@
 #!/bin/sh -e
 
+COMMIT=$(git describe --always)
+
 cd media_build
 
 # prepare linux_media tarball
@@ -15,7 +17,9 @@ mv media-build-*.dkms_src.tgz ../media-build-dkms
 cd ../media-build-dkms
 
 # extract media_build tarball
-./prepare_dkms_src.sh ubuntu bionic
+./prepare_dkms_src.sh Ubuntu bionic
+
+dch -i Used commit: https://github.com/ali1234/tbs-dkms/tree/$COMMIT
 
 # create a binary package
 fakeroot debian/rules binary
@@ -23,5 +27,7 @@ fakeroot debian/rules binary
 # create the source package and sign it
 debuild -S
 
-# create the binary package (no signing)
-debuild -i -us -uc -b
+# create the binary package
+debuild -i -b
+
+cat debian/changelog
