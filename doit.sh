@@ -2,6 +2,9 @@
 
 COMMIT=$(git describe --always)
 
+git clean -dfx
+git submodule foreach --recursive git clean -dfx
+
 cd media_build
 
 # prepare linux_media tarball
