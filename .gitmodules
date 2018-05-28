@@ -1,0 +1,7 @@
+[submodule "media_build"]
+	path = media_build
+	url = git@github.com:ali1234/media_build.git
+[submodule "linux_media"]
+	path = linux_media
+	url = https://github.com/tbsdtv/linux_media
+	branch = latest
